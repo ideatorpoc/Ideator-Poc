@@ -3,10 +3,7 @@
       <md-icon class="icon-20">lightbulb_outline</md-icon>
       Ideator
     </span>
-    <span>
-      <a href="Ideas" >Ideas</a>
-    </span>
-    <span>
-      <a href="Collectionsss" >Collectionssss</a>
-    </span>
+    <div>
+       <a *ngFor="let item of menuItems" [routerLink]="item.link" href="">{{item.caption}}</a>
+    </div>
 </md-toolbar>

@@ -1,13 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 
+class MenuItem{
+    constructor(public caption: string, public link: any[]){
+
+    }
+}
+
 @Component({
     selector:'idea-nav',
     templateUrl: './nav.component.html',
     styleUrls: ['./nav.component.css']
 })
 export class NavComponent implements OnInit{
+    menuItems: MenuItem[];
 
     ngOnInit(){
-
+        this.menuItems = [
+      { caption: 'Ideas', link: ['/ideas'] },
+      { caption: 'Login', link: ['/login'] }      
+    ];
     }
 } 
