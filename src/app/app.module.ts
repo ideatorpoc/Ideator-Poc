@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import {MaterialModule} from '@angular/material';
 
+import  './core/rxjs-extensions';
 import { AppComponent } from './app.component';
 import {IdeasModule} from './ideas/ideas.module';
 import { AppRoutingModule } from './app-routing.module';
