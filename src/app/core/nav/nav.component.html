@@ -1,4 +1,4 @@
-<md-toolbar color="primary">
+<!--md-toolbar color="primary">
       <span>
       <md-icon class="icon-20">lightbulb_outline</md-icon>
       Ideator
@@ -6,4 +6,18 @@
     <div>
        <a *ngFor="let item of menuItems" [routerLink]="item.link" href="">{{item.caption}}</a>
     </div>
-</md-toolbar>
+</md-toolbar-->
+
+<md-toolbar color="primary">
+    <span class="logo"> <img  src="assets/img/logo.svg"></span>
+
+
+    <span class="example-fill-remaining-space "></span>
+
+
+    <ul>
+      <li *ngFor="let item of menuItems" [routerLink]="item.link"> <a  href="">{{item.caption}}</a></li>
+     
+
+    </ul>
+  </md-toolbar>

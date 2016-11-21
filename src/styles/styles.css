@@ -1,3 +1,89 @@
 /* You can add global styles to this file, and also import other style files */
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: #e5e5e5;
+}
+.main-container {
+    max-width: 1264px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+a {
+    color: #03758e;
+    text-decoration: none;
+}
+a:hover {
+    color: #97c11f;
+}
+.logo {
+    width: 100px;
+}
+.logo img {
+    width: auto;
+    height: 50px
+}
+header {
+    margin-bottom: 25px;
+}
+header md-toolbar.md-primary {
+    background: #03758e;
+}
+header md-toolbar.md-primary ul {
+    list-style: none;
+}
+header md-toolbar.md-primary ul li {
+    display: inline-block;
+    padding: 0 15px;
+    font-size: 16px;
+}
+header md-toolbar.md-primary ul li a {
+    color: #fff;
+}
+header md-toolbar.md-primary ul li a:hover {
+    color: #97c11f;
+}
+/****************************/
+
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+/**/
+
+md-card md-card-title {
+    line-height: 40px;
+}
+
+/***************form**************/
+
+[md-raised-button].md-primary{
+    background: #03758e;
+}
+.form-container{ width: 750px; margin: 0 auto;}
+.form-container md-input, .form-container md-textarea{
+    width: 100%;
+}
+.form-container .row{
+    margin-bottom: 15px;
+}
+.form-container .button-wrapper{
+    margin-top: 30px;
+}
+
+.form-container .form-header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.form-container .form-header h1{
+    margin-bottom: 0;
+}
+.form-container .form-header p{
+    margin-top: 10px;
+}
+
+/********common**********/
