@@ -1,4 +1,9 @@
+import { IdeasModule } from './../ideas.module';
 import { Component, OnInit } from '@angular/core';
+
+import { Idea } from './../shared/idea.model';
+import { IdeaService } from './../shared/idea.service';
+
 
 @Component({
   selector: 'app-idea-list',
@@ -6,10 +11,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./idea-list.component.css']
 })
 export class IdeaListComponent implements OnInit {
+  errorMessage: string;
+  ideas:Idea[];
+  dummyIdeas:Idea[];
 
-  constructor() { }
+  constructor(private _ideaService:IdeaService) { }
 
-  ngOnInit() {
+    getDummyIdeas():void{
+    this.dummyIdeas= this._ideaService.getDummyIdeas();
+  }
+  
+  ngOnInit():void {
+     this.getDummyIdeas();
+  
   }
 
 }
