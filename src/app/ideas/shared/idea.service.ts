@@ -6,6 +6,7 @@ export class IdeaService {
 
     constructor() {
     }
+    
     getDummyIdeas = () => [
     {
       "photo": "myphoto1.png",

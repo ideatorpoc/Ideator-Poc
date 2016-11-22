@@ -2,6 +2,8 @@
 @import '~https://fonts.googleapis.com/icon?family=Material+Icons';
 @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
 
+/*@import '~@angular/material/core/theming/prebuilt/pink-bluegrey.css';*/
+
 
 body {
     padding: 0px;
@@ -23,16 +25,19 @@ a:hover {
 .logo {
     width: 100px;
 }
-.logo img {
+
+/*.logo img {
     width: auto;
     height: 50px
-}
+}*/
 header {
     margin-bottom: 25px;
 }
-header md-toolbar.md-primary {
+
+/*header md-toolbar.md-primary {
     background: #03758e;
-}
+}*/
+
 header md-toolbar.md-primary ul {
     list-style: none;
 }
@@ -49,9 +54,9 @@ header md-toolbar.md-primary ul li a:hover {
 }
 /****************************/
 
-.example-fill-remaining-space {
+/*.example-fill-remaining-space {
     flex: 1 1 auto;
-}
+}*/
 /**/
 
 md-card md-card-title {
