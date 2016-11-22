@@ -2,17 +2,40 @@
   <!--<li *ngFor="let dummyidea of dummyIdeas">
     {{dummyidea.name}}
   </li>-->
-<!--
+  <!--
 <li *ngFor="let idea of dummyIdeas">
     {{idea.name}}
   </li>
 
 </ul>-->
 
-<p>
-  idea List works!
-</p>
+  <md-grid-list cols="3"  gutterSize="30px" rowHeight="500px">
+    <md-grid-tile *ngFor="let dummyidea of dummyIdeas">
+      <md-card>
+        <md-card-header>
+          <img md-card-avatar src="{{dummyidea.photo}}">
+          <md-card-title><a href="#">{{dummyidea.name}}</a></md-card-title>
 
-<!--<md-card>
-  Text
-</md-card>-->
+        </md-card-header>
+        <img md-card-image src="{{dummyidea.banner}}">
+        <md-card-content>
+          <md-card-title><a href="#">{{dummyidea.title}}</a></md-card-title>
+          <p>{{dummyidea.description}}
+          </p>
+
+        </md-card-content>
+        <md-card-actions>
+          <button md-icon-button>
+    <md-icon class="material-icons gray md-24">favorite </md-icon>
+</button><span class="count">15 Likes</span>
+ <button md-icon-button>
+    <md-icon class="material-icons gray md-24">comment</md-icon>
+</button><span class="count">5 Comments</span>
+          
+        </md-card-actions>
+
+      </md-card>
+    </md-grid-tile>
+
+  </md-grid-list>
+

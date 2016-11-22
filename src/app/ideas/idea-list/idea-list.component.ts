@@ -23,7 +23,6 @@ export class IdeaListComponent implements OnInit {
   
   ngOnInit():void {
      this.getDummyIdeas();
-  
-  }
+    }
 
 }
