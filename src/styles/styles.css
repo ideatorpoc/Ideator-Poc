@@ -107,7 +107,21 @@ md-card md-card-actions span.count{
     color: #9f9f9f;
     margin-right: 15px;
 }
-
+.create-idea{
+ position: fixed;
+ right: 5px; 
+ bottom: 5px;
+    height: 130px;
+    width: 130px;
+    border-radius: 50% 50% 5px 50%;
+    background: #c2c2c2;
+}
+.create-idea button{
+        position: fixed;
+    bottom: 40px;
+    right: 40px;
+    /*background: #03758e !important;*/
+}
 /**************/
 
 md-input .md-input-prefix{

@@ -4,4 +4,6 @@ export class Idea {
     banner:string;
     title:string;
     description:string;
+    likescount:number;
+    commentscount:number;
 }
