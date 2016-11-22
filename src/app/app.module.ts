@@ -9,13 +9,14 @@ import { AppComponent } from './app.component';
 import {IdeasModule} from './ideas/ideas.module';
 import {LoginModule} from './login/login.module';
 
-import { AppRoutingModule } from './app-routing.module';
+import { AppRoutingModule,routedComponents } from './app-routing.module';
 
 import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    routedComponents
   ],
   imports: [
     BrowserModule,

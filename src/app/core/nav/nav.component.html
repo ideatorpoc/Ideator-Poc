@@ -16,8 +16,9 @@
 
 
     <ul>
-      <li *ngFor="let item of menuItems" [routerLink]="item.link"> <a  href="">{{item.caption}}</a></li>
-     
+      <li *ngFor="let item of menuItems" > 
+        <a href=""  [routerLink]="item.link">{{item.caption}}</a>
+      </li>    
 
     </ul>
   </md-toolbar>
