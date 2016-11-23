@@ -1,5 +1,5 @@
-<ul>
-  <!--<li *ngFor="let dummyidea of dummyIdeas">
+<!--ul>
+  <<li *ngFor="let dummyidea of dummyIdeas">
     {{dummyidea.name}}
   </li>-->
   <!--
@@ -8,6 +8,9 @@
   </li>
 
 </ul>-->
+
+
+
 
   <md-grid-list cols="3" gutterSize="30px" rowHeight="500px">
     <md-grid-tile *ngFor="let dummyidea of dummyIdeas">
@@ -33,11 +36,29 @@
 </button><span class="count">{{dummyidea.commentscount}} Comments</span>
 
         </md-card-actions>
-
+         <div class="share-icon-wrapper" >
+            <span *ngIf="test"> 
+    <button md-mini-fab class=" facebook" >
+   <md-icon class="md-18" svgSrc="assets/img/facebook.svg"></md-icon>
+   </button>
+   <button md-mini-fab class=" twitter">
+   <md-icon class="md-18" svgSrc="assets/img/twitter.svg"></md-icon>
+   </button>
+   <button md-mini-fab class=" googleplus">
+   <md-icon class="md-18" svgSrc="assets/img/google-plus.svg" ></md-icon>
+   </button>
+   
+   </span>
+<button md-mini-fab class="share-icon" (click)="test = !test">
+   <md-icon class="md-24">share</md-icon>
+   </button>  
+  
+         </div>
       </md-card>
     </md-grid-tile>
 
   </md-grid-list>
+
   <div class="create-idea">
     <a href="" [routerLink]="['/ideas', 'add']">
       <button md-fab color="warn" md-tooltip="Create New Idea" tooltip-position="above">

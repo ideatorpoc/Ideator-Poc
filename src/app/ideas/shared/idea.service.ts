@@ -22,7 +22,7 @@ export class IdeaService {
     },
     {
        "photo": "assets/img/charlie-smith.png",
-      "name": "Chrlie Smith",
+      "name": "Charlie Smith",
       "banner": "assets/img/img02.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
