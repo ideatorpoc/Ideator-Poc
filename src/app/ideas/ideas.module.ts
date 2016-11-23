@@ -8,6 +8,7 @@ import {MaterialModule} from '@angular/material';
 import {IdeasRoutingModule,routedComponents} from './ideas-routing.module';
 
 import { IdeaService } from './shared/idea.service';
+import { IdeaAddComponent } from './idea-add/idea-add.component';
 
 @NgModule({
   imports: [
@@ -17,7 +18,7 @@ import { IdeaService } from './shared/idea.service';
     IdeasRoutingModule
   ],
 
-  declarations: [routedComponents],
+  declarations: [routedComponents, IdeaAddComponent],
   providers:[IdeaService]
 })
 export class IdeasModule { }
