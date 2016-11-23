@@ -13,7 +13,7 @@ body {
 .main-container {
     max-width: 1264px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 170px;
 }
 a {
     color: #03758e;
@@ -124,7 +124,7 @@ md-card md-card-actions span.count{
 }
 /**************/
 
-md-input .md-input-prefix{
+.login md-input .md-input-prefix{
     width: 50px;
 }
 .material-icons.gray { color: #9f9f9f; }
@@ -133,4 +133,10 @@ md-input .md-input-prefix{
 .material-icons.md-24 { font-size: 24px; }
 .material-icons.md-36 { font-size: 36px; }
 .material-icons.md-48 { font-size: 48px; }
+
+md-card [md-card-avatar]{transition: all .2s ease-in-out;}
+md-card [md-card-avatar]:hover{
+    transform: scale(1.9);
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12)
+}
 
