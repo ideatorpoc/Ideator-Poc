@@ -18,7 +18,8 @@ export class IdeaListComponent implements OnInit {
   constructor(private _ideaService:IdeaService) { }
 
     getDummyIdeas():void{
-    this.dummyIdeas= this._ideaService.getDummyIdeas();
+    //this.dummyIdeas= this._ideaService.getDummyIdeas();
+    this.dummyIdeas= this._ideaService.ideas;
   }
   
   ngOnInit():void {

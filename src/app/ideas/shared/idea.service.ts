@@ -1,10 +1,13 @@
-import { Injectable } from '@angular/core';
 
+import { Injectable } from '@angular/core';
+import { Idea } from './idea.model';
 
 @Injectable()
 export class IdeaService {
 
+    ideas:Idea[];
     constructor() {
+      this.ideas= this.getDummyIdeas();
     }
     
     getDummyIdeas = () => [
