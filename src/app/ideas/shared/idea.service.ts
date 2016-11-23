@@ -9,8 +9,8 @@ export class IdeaService {
     
     getDummyIdeas = () => [
     {
-      "photo": "assets/img/user01.png",
-      "name": "Chrlie Smith",
+      "photo": "assets/img/Carter-Wigell.png",
+      "name": "Carter Wigell",
       "banner": "assets/img/img01.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
@@ -18,7 +18,7 @@ export class IdeaService {
       "commentscount":15
     },
     {
-       "photo": "assets/img/user04.png",
+       "photo": "assets/img/charlie-smith.png",
       "name": "Chrlie Smith",
       "banner": "assets/img/img02.png",
       "title":"Frozen Pizza",
@@ -27,8 +27,8 @@ export class IdeaService {
       "commentscount":15
     },
     {
-       "photo": "assets/img/user02.png",
-      "name": "Chrlie Smith",
+       "photo": "assets/img/bindi-karia.png",
+      "name": "Bindi Karia",
       "banner": "assets/img/img03.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
@@ -36,8 +36,8 @@ export class IdeaService {
       "commentscount":15
     },
     {
-      "photo": "assets/img/user05.png",
-      "name": "Chrlie Smith",
+      "photo": "assets/img/aber.png",
+      "name": "Aber Whitcomb",
       "banner": "assets/img/img04.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
@@ -45,8 +45,8 @@ export class IdeaService {
       "commentscount":15
     },
     {
-       "photo": "assets/img/user03.png",
-      "name": "Chrlie Smith",
+       "photo": "assets/img/Julie-Trell.png",
+      "name": "Julie Trell",
       "banner": "assets/img/img05.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
@@ -54,8 +54,8 @@ export class IdeaService {
       "commentscount":15
     },
     {
-       "photo": "assets/img/user06.png",
-      "name": "Chrlie Smith",
+       "photo": "assets/img/Ray-Arata.png",
+      "name": "Ray Arata",
       "banner": "assets/img/img07.png",
       "title":"Frozen Pizza",
       "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",

@@ -13,7 +13,7 @@ body {
 .main-container {
     max-width: 1264px;
     margin: 0 auto;
-    margin-bottom: 50px;
+    margin-bottom: 170px;
 }
 a {
     color: #03758e;
@@ -124,7 +124,7 @@ md-card md-card-actions span.count{
 }
 /**************/
 
-md-input .md-input-prefix{
+.login md-input .md-input-prefix{
     width: 50px;
 }
 .material-icons.gray { color: #9f9f9f; }
