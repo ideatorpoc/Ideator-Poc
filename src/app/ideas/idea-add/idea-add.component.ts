@@ -1,4 +1,9 @@
+
+
 import { Component, OnInit } from '@angular/core';
+
+import { Idea } from './../shared/idea.model';
+import { IdeaService } from './../shared/idea.service';
 
 @Component({
   selector: 'app-idea-add',
@@ -7,9 +12,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeaAddComponent implements OnInit {
 
-  constructor() { }
+  newIdea:Idea= <Idea>{};
+  constructor(private _ideaService:IdeaService) { }
 
   ngOnInit() {
+    
+  }
+
+  save() {
+    let idea = this.newIdea;
+    console.log(idea.name);
+    this._ideaService.addNewIdea(this.newIdea);
   }
 
 }
