@@ -13,8 +13,8 @@
 
 
   <md-grid-list cols="3" gutterSize="30px" rowHeight="500px" class="animated fadeIn ">
-    <md-grid-tile *ngFor="let dummyidea of dummyIdeas">
-      <md-card>
+    <md-grid-tile *ngFor="let dummyidea of dummyIdeas; let i = index">
+      <md-card id="idea_{{i}}">
         <md-card-header>
           <img md-card-avatar src="{{dummyidea.photo}}" md-tooltip={{dummyidea.name}} tooltip-position="below">
           <md-card-title><a href="#">{{dummyidea.name}}</a></md-card-title>
