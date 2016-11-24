@@ -9,6 +9,15 @@ export class IdeaService {
     constructor() {
       this.ideas= this.getDummyIdeas();
     }
+
+    addNewIdea(newIdea:Idea){
+      newIdea.photo='assets/img/Carter-Wigell.png';
+      newIdea.banner='assets/img/img01.png';
+      newIdea.title='Frozen Pizza';
+      newIdea.likescount=10;
+      newIdea.commentscount=15;
+      this.ideas.push(newIdea);
+    }
     
     getDummyIdeas = () => [
     {

@@ -1,7 +1,9 @@
 
+
 import { Component, OnInit } from '@angular/core';
 
 import { Idea } from './../shared/idea.model';
+import { IdeaService } from './../shared/idea.service';
 
 @Component({
   selector: 'app-idea-add',
@@ -11,7 +13,7 @@ import { Idea } from './../shared/idea.model';
 export class IdeaAddComponent implements OnInit {
 
   newIdea:Idea= <Idea>{};
-  constructor() { }
+  constructor(private _ideaService:IdeaService) { }
 
   ngOnInit() {
     
@@ -20,6 +22,7 @@ export class IdeaAddComponent implements OnInit {
   save() {
     let idea = this.newIdea;
     console.log(idea.name);
+    this._ideaService.addNewIdea(this.newIdea);
   }
 
 }
