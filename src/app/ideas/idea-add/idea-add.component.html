@@ -6,18 +6,18 @@
       <p>Now give me the pitch.</p></div>
       <form>
         <div class="row">
-          <md-input placeholder="Give your idea name. (You can change it later) *"></md-input>
+          <md-input placeholder="Give your idea name. (You can change it later) *" [(ngModel)]="newIdea.name" name="ideaname"></md-input>
         </div>
 
         <div class="row">
-          <md-textarea class="" placeholder="The Elevator Pitch *"></md-textarea>
+          <md-textarea class="" placeholder="The Elevator Pitch *" [(ngModel)]="newIdea.description" name="ideadesc"></md-textarea>
 
         </div>
          <!--<div class="row">
         <input type="file" name="fileupload" value="fileupload" id="fileupload"></div>-->
 
         <div class="row button-wrapper">
-          <div><button md-raised-button color="primary">CREATE NEW IDEA</button></div>
+          <div><button md-raised-button color="primary" (click)="save()">CREATE NEW IDEA</button></div>
          
          
         </div>

@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+
+import { Idea } from './../shared/idea.model';
 
 @Component({
   selector: 'app-idea-add',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IdeaAddComponent implements OnInit {
 
+  newIdea:Idea= <Idea>{};
   constructor() { }
 
   ngOnInit() {
+    
+  }
+
+  save() {
+    let idea = this.newIdea;
+    console.log(idea.name);
   }
 
 }

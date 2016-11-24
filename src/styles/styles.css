@@ -37,9 +37,9 @@ header {
     margin-bottom: 25px;
 }
 
-header md-toolbar.md-primary {
+/*header md-toolbar.md-primary {
     background: #03758e;
-}
+}*/
 
 header md-toolbar.md-primary ul {
     list-style: none;
