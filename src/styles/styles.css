@@ -22,6 +22,9 @@ a {
 a:hover {
     color: #97c11f;
 }
+h1{
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
 ul{
     padding-left: 0;
 }
@@ -37,9 +40,9 @@ header {
     margin-bottom: 25px;
 }
 
-/*header md-toolbar.md-primary {
+header md-toolbar.md-primary {
     background: #03758e;
-}*/
+}
 
 header md-toolbar.md-primary ul {
     list-style: none;
@@ -102,6 +105,14 @@ md-card img{
     width: 382px;
     height: 205px;
 }
+md-card{
+    width: 100%;
+    
+}
+md-card md-card-actions{
+    margin-bottom: 0px;
+}
+
 md-card md-card-actions span.count{
     font-size: 12px;
     color: #9f9f9f;
@@ -117,9 +128,9 @@ md-card md-card-actions span.count{
     background: #c2c2c2;
 }
 .create-idea button{
-        position: fixed;
-    bottom: 40px;
-    right: 40px;
+        position: absolute;
+    bottom: 35px;
+    right: 35px;
     /*background: #03758e !important;*/
 }
 /**************/
