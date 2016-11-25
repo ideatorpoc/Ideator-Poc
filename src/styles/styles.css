@@ -29,7 +29,7 @@ ul{
     padding-left: 0;
 }
 .logo {
-    width: 100px;
+    width: auto;
 }
 
 /*.logo img {
@@ -107,6 +107,11 @@ md-card img{
 }
 md-card{
     width: 100%;
+    padding: 15px;
+    
+}
+.idealist md-card{
+    padding: 15px;
     
 }
 md-card md-card-actions{
@@ -159,8 +164,9 @@ md-card [md-card-avatar]:hover{
 /************share*************/
 .share-icon-wrapper{
     position: absolute;
-    top: 265px;
+    top: 255px;
     right:12px; 
+    z-index: 2;
 }
 .share-icon-wrapper .share-icon {
     display: inline-block;  
@@ -203,4 +209,54 @@ transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
 }
 .share-icon ~ span {
   margin-right: 250px;
+}
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+
+/**********************search*********************/
+
+.search-wrapper{
+width: 450PX;
+    font-size: 16px;
+    line-height: 30px;
+}
+.search-wrapper .md-input-wrapper{
+    margin: 16px 0;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 8px;
+    border-radius: 3px;
+}
+.search-wrapper .md-input-underline{
+    display:   none;
+}
+.search-wrapper .md-input-placeholder{
+     color: #fff;
+}
+.search-wrapper .md-input-placeholder.md-float:not(.md-empty), .search-wrapper .md-input-placeholder.md-float.md-focused{
+    transform:translateY(0) scale(0);
+    padding-bottom: 0;
+    color:#fff;
+    
+}
+.search-wrapper md-icon{
+    top: 4px;
+    position: relative;
+
+}
+.search-wrapper .md-input-prefix{
+    width: 35px;
+}
+
+md-toolbar .heading{
+    border-left: 1px solid rgba(255,255,255,0.2);
+    padding-left: 24px;
+    margin-left: 24px;
+    line-height: 32px;
+    margin-right: 50px;
+}
+md-toolbar .user-icon{
+    margin-left: 20px;
+    margin-top: 6px;
 }
