@@ -6,6 +6,7 @@
 export const environment = {
   production: false,
   baseUrls: {
-    ideas: 'api/ideas.json'    
+       //ideas: 'app/ideas/idea.json'
+       ideas:'https://ideatorpoc-backend.herokuapp.com/api/ideas/'
   }
 };
