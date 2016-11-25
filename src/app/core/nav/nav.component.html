@@ -9,16 +9,23 @@
 </md-toolbar-->
 
 <md-toolbar color="primary" class="animated fadeInDown">
-    <span class="logo"> <img  src="assets/img/logo.svg"></span>
+  <span class="logo"> <img  src="assets/img/logo.svg"></span>
+
+  <div class="heading">Home</div>
+
+  <md-input type="text" placeholder="Search" name="" value="" class="search-wrapper">
+    <span md-prefix><md-icon class="material-icons white md-24">search</md-icon></span>
+  </md-input>
+  <span class="example-fill-remaining-space"></span>
 
 
-    <span class="example-fill-remaining-space"></span>
+  <ul>
+    <li *ngFor="let item of menuItems">
+      <a href="" [routerLink]="item.link">{{item.caption}}</a>
+    </li>
 
 
-    <ul>
-      <li *ngFor="let item of menuItems" > 
-        <a href=""  [routerLink]="item.link">{{item.caption}}</a>
-      </li>    
+  </ul>
+  <div class="user-icon" ><img md-card-avatar src="assets/img/user03.png"  md-tooltip= "Vijay Pawase" tooltip-position="below"></div>
 
-    </ul>
-  </md-toolbar>
+</md-toolbar>

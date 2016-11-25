@@ -10,14 +10,32 @@
 </ul>-->
 
 
+ 
+  
 
 
-  <md-grid-list cols="3" gutterSize="30px" rowHeight="500px" class="animated fadeIn ">
+  <md-grid-list cols="3" gutterSize="30px" rowHeight="500px" class="animated fadeIn idealist ">
     <md-grid-tile *ngFor="let dummyidea of dummyIdeas">
       <md-card>
         <md-card-header>
           <img md-card-avatar src="{{dummyidea.photo}}" md-tooltip={{dummyidea.name}} tooltip-position="below">
           <md-card-title><a href="#">{{dummyidea.name}}</a></md-card-title>
+         <span class="example-fill-remaining-space"></span>
+          <!--<button md-icon-button md-tooltip="Fullscreen" tooltip-position="below">
+    <md-icon class="material-icons gray md-24">fullscreen </md-icon>
+      </button>-->
+      
+      <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="More" tooltip-position="below">
+   <md-icon class="material-icons gray md-24">more_vert</md-icon>
+</button>
+
+<md-menu #menu="mdMenu" x-position="before">
+    <button md-menu-item> Refresh </button>
+    <button md-menu-item> Settings </button>
+    <button md-menu-item> Help </button>
+    <button md-menu-item disabled> Sign Out </button>
+</md-menu>
+
 
         </md-card-header>
         <img md-card-image src="{{dummyidea.banner}}">
