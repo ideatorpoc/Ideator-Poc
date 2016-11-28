@@ -29,5 +29,6 @@ export class IdeasRoutingModule{
 export const routedComponents = [
     IdeasComponent,
     IdeaListComponent,
-    IdeaComponent
+    IdeaComponent,
+    IdeaAddComponent
 ]
