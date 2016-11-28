@@ -9,15 +9,28 @@
 
 </ul>-->
 
-
-
-
-  <md-grid-list cols="3" gutterSize="30px" rowHeight="500px">
-    <md-grid-tile *ngFor="let dummyidea of dummyIdeas">
-      <md-card>
+  <md-grid-list cols="3" gutterSize="30px" rowHeight="500px" class="animated fadeIn idealist">
+    <md-grid-tile *ngFor="let dummyidea of dummyIdeas; let i = index">
+      <md-card id="idea_{{i}}">
         <md-card-header>
           <img md-card-avatar src="{{dummyidea.photo}}" md-tooltip={{dummyidea.name}} tooltip-position="below">
           <md-card-title><a href="#">{{dummyidea.name}}</a></md-card-title>
+         <span class="example-fill-remaining-space"></span>
+          <!--<button md-icon-button md-tooltip="Fullscreen" tooltip-position="below">
+    <md-icon class="material-icons gray md-24">fullscreen </md-icon>
+      </button>-->
+      
+      <button md-icon-button [md-menu-trigger-for]="menu" md-tooltip="More" tooltip-position="below">
+   <md-icon class="material-icons gray md-24">more_vert</md-icon>
+</button>
+
+<md-menu #menu="mdMenu" x-position="before">
+    <button md-menu-item> Refresh </button>
+    <button md-menu-item> Settings </button>
+    <button md-menu-item> Help </button>
+    <button md-menu-item disabled> Sign Out </button>
+</md-menu>
+
 
         </md-card-header>
         <img md-card-image src="{{dummyidea.banner}}">
@@ -30,28 +43,27 @@
         <md-card-actions>
           <button md-icon-button md-tooltip="Likes" tooltip-position="below">
     <md-icon class="material-icons gray md-24">favorite </md-icon>
-</button><span class="count">{{dummyidea.likescount}} Likes</span>
-          <button md-icon-button md-tooltip="Comments" tooltip-position="below">
+      </button><span class="count">{{dummyidea.likescount}} Likes</span>
+        <button md-icon-button md-tooltip="Comments" tooltip-position="below">
     <md-icon class="material-icons gray md-24">comment</md-icon>
-</button><span class="count">{{dummyidea.commentscount}} Comments</span>
-
+      </button><span class="count">{{dummyidea.commentscount}} Comments</span>
         </md-card-actions>
          <div class="share-icon-wrapper" >
-            <span *ngIf="test"> 
-    <button md-mini-fab class=" facebook" >
-   <md-icon class="md-18" svgSrc="assets/img/facebook.svg"></md-icon>
-   </button>
-   <button md-mini-fab class=" twitter">
-   <md-icon class="md-18" svgSrc="assets/img/twitter.svg"></md-icon>
-   </button>
-   <button md-mini-fab class=" googleplus">
-   <md-icon class="md-18" svgSrc="assets/img/google-plus.svg" ></md-icon>
-   </button>
-   
-   </span>
-<button md-mini-fab class="share-icon" (click)="test = !test">
-   <md-icon class="md-24">share</md-icon>
-   </button>  
+            <span *ngIf="dummyidea.show"  class="animated bounceInRight "> 
+              <button md-mini-fab class=" facebook">
+                <md-icon class="md-18" svgSrc="assets/img/facebook.svg"></md-icon>
+              </button>
+              <button md-mini-fab class=" twitter">
+                <md-icon class="md-18" svgSrc="assets/img/twitter.svg"></md-icon>
+              </button>
+              <button md-mini-fab class=" googleplus">
+                <md-icon class="md-18" svgSrc="assets/img/google-plus.svg" ></md-icon>
+             </button>
+            </span>
+
+            <button md-mini-fab class="share-icon" (click)="toggle(dummyidea)">
+              <md-icon class="md-24">share</md-icon>
+            </button>  
   
          </div>
       </md-card>
@@ -59,7 +71,7 @@
 
   </md-grid-list>
 
-  <div class="create-idea">
+  <div class="create-idea animated bounceInUp">
     <a href="" [routerLink]="['/ideas', 'add']">
       <button md-fab color="warn" md-tooltip="Create New Idea" tooltip-position="above">
     <md-icon class="md-24 " >add</md-icon>

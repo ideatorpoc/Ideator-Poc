@@ -21,10 +21,12 @@ export class IdeaListComponent implements OnInit {
    
       this.getIdeas();
     }
-
     getIdeas():void{
       this._ideaService.getIdeas().subscribe(ideas=>this.dummyIdeas=ideas)
-   
+    }
+    toggle(dummyIdea):void {
+      dummyIdea.show = !dummyIdea.show
+
     }
 
 }

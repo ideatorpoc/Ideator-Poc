@@ -1,6 +1,7 @@
 
 <div class="form-container">
-    <md-card class="create-idea-form">
+  
+    <md-card class="create-idea-form animated fadeIn">
      <div class="form-header"> <h1>It starts with an idea.</h1>
       <p>Now give me the pitch.</p></div>
       <form>
@@ -21,7 +22,7 @@
         </div>
         <div class="row button-wrapper">
           <div><button md-raised-button color="primary" (click)="save()">CREATE NEW IDEA</button>
-          <button md-button class="cancel-button">CANCEL</button></div>
+          <button md-button class="cancel-button" [routerLink]="['/ideas']">CANCEL</button></div>
          
          
         </div>
