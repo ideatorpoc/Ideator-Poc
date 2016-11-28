@@ -16,14 +16,15 @@ export class IdeaListComponent implements OnInit {
   dummyIdeas:Idea[];
 
   constructor(private _ideaService:IdeaService) { }
-
-    getDummyIdeas():void{
-    //this.dummyIdeas= this._ideaService.getDummyIdeas();
-    this.dummyIdeas= this._ideaService.ideas;
-  }
   
   ngOnInit():void {
-     this.getDummyIdeas();
+   
+      this.getIdeas();
+    }
+
+    getIdeas():void{
+      this._ideaService.getIdeas().subscribe(ideas=>this.dummyIdeas=ideas)
+   
     }
 
 }

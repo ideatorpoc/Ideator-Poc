@@ -1,88 +1,57 @@
 
 import { Injectable } from '@angular/core';
-import { Idea } from './idea.model';
+import { Http, Response,Headers, RequestOptions } from '@angular/http';
+import { Observable } from 'rxjs/Observable';
+
+import { environment } from './../../../environments/environment';
+
+import { Idea, createIdea } from './idea.model';
+
 
 @Injectable()
 export class IdeaService {
 
-    ideas:Idea[];
-    constructor() {
-      this.ideas= this.getDummyIdeas();
+  private _ideaUrl = environment.baseUrls.ideas;
+  private _ideaAddUrl=environment.baseUrls.ideadAdd;
+  ideas: Idea[];
+  private CreateIdea:createIdea;
+  constructor(private _http: Http) {
+       
+  }
+
+  addNewIdea(newIdea: Idea) {
+    this.CreateIdea= new createIdea() 
+    newIdea.photo = 'assets/img/Carter-Wigell.png';
+    newIdea.banner = 'assets/img/img01.png';
+    newIdea.title = 'Frozen Pizza';
+    newIdea.likescount = 10;
+    newIdea.commentscount = 15;
+    this.CreateIdea.idea = new Idea();
+    this.CreateIdea.idea= newIdea;
+    let body = JSON.stringify(this.CreateIdea);
+    console.log(this._ideaAddUrl);
+    console.log(body);
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+
+      return <Observable<Idea>>this._http
+       .post(this._ideaAddUrl, body,options)
+       .map(res => <Idea>res.json())
+       .do(data=>console.log('Added Idea response:' + JSON.stringify(data)))
+       .catch(this.handleError);
     }
 
-    addNewIdea(newIdea:Idea){
-      newIdea.photo='assets/img/Carter-Wigell.png';
-      newIdea.banner='assets/img/img01.png';
-      newIdea.title='Frozen Pizza';
-      newIdea.likescount=10;
-      newIdea.commentscount=15;
-      this.ideas.push(newIdea);
-    }
-    
-    getDummyIdeas = () => [
-    {
-      "photo": "assets/img/Carter-Wigell.png",
-      "name": "Carter Wigell",
-      "banner": "assets/img/img01.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-       "photo": "assets/img/charlie-smith.png",
-      "name": "Charlie Smith",
-      "banner": "assets/img/img02.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-       "photo": "assets/img/bindi-karia.png",
-      "name": "Bindi Karia",
-      "banner": "assets/img/img03.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-      "photo": "assets/img/aber.png",
-      "name": "Aber Whitcomb",
-      "banner": "assets/img/img04.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-       "photo": "assets/img/Julie-Trell.png",
-      "name": "Julie Trell",
-      "banner": "assets/img/img05.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-       "photo": "assets/img/Ray-Arata.png",
-      "name": "Ray Arata",
-      "banner": "assets/img/img07.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    },
-    {
-       "photo": "assets/img/user06.png",
-      "name": "Chrlie Smith",
-      "banner": "assets/img/img06.png",
-      "title":"Frozen Pizza",
-      "description":"If you'd like to contribute, you must follow our contributing guidelines. You can look through the issues (which should be up-to-date on)",
-      "likescount":10,
-      "commentscount":15
-    }
-  ];
-   
+  getIdeas(): Observable<Idea[]> {
+      return this._http.get(this._ideaUrl)
+      .map((response: Response) => <Idea[]>response.json())
+     // .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this.handleError);
+  }
+  private handleError(error: Response) {
+    console.error(error);
+    let msg = `Status code ${error.status} on url ${error.url} and ${error.statusText}`;
+     
+    return Observable.throw(msg);
+  } 
+
 }
