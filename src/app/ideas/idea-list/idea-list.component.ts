@@ -21,12 +21,22 @@ export class IdeaListComponent implements OnInit {
    
       this.getIdeas();
     }
-
     getIdeas():void{
       this._ideaService.getIdeas().subscribe(ideas=>this.dummyIdeas=ideas)
     }
     toggle(dummyIdea):void {
       dummyIdea.show = !dummyIdea.show
+    }
+
+    deleteIdea(idea):void{
+      console.log("id is")
+      console.log(idea)
+      this._ideaService.deleteIdea(idea).subscribe(
+        error =>{
+          console.log('error occurred');
+          console.log(error);
+        }
+      )
     }
 
 }

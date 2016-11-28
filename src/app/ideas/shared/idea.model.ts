@@ -1,4 +1,5 @@
 export class Idea {
+    id:number;
     photo:string;
     name:string;
     banner:string;
@@ -6,4 +7,8 @@ export class Idea {
     description:string;
     likescount:number;
     commentscount:number;
+    }
+
+export class createIdea{
+    idea:Idea;
 }
