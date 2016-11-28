@@ -18,6 +18,11 @@ export class IdeaAddComponent implements OnInit {
   errorMessage:string;
   constructor(private _ideaService:IdeaService,private _snackBar: MdSnackBar) { }
 
+  showSnackbar() {   
+    let simpleSnackBarRef =  this._snackBar.open('Your idea is created successfully..', 'Dismiss');
+    setTimeout(simpleSnackBarRef.dismiss.bind(simpleSnackBarRef), 5000);
+  }
+
   ngOnInit() {
     
   }
@@ -31,6 +36,7 @@ export class IdeaAddComponent implements OnInit {
         console.log(error);
       }
       ); 
+      this.showSnackbar();
     //ToDO:Or does it even return anything
     //  this._ideaService.addNewIdea(this.newIdea).subscribe();
   }
