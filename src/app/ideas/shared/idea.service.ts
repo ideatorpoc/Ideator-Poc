@@ -25,7 +25,7 @@ export class IdeaService {
     this.CreateIdea= new createIdea() 
     newIdea.photo = 'assets/img/user_icon.png';
     newIdea.banner = 'assets/img/dummy.png';
-    newIdea.title = 'Frozen Pizza';
+    newIdea.name = 'John Doe';
     newIdea.likescount = 10;
     newIdea.commentscount = 15;
     this.CreateIdea.idea = new Idea();
@@ -49,6 +49,15 @@ export class IdeaService {
      // .do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
+
+  deleteIdea(idea: Idea): Observable<Idea[]> {
+    let headers = new Headers({ 'Accept': 'application/json'});
+    let options = new RequestOptions({ headers: headers });
+    const url = `${this._ideaUrl}${idea.id}`;
+      return this._http.delete(url,options)
+      .map((res:Response) => res.json())
+      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+  }  
   private handleError(error: Response) {
     console.error(error);
     let msg = `Status code ${error.status} on url ${error.url} and ${error.statusText}`;

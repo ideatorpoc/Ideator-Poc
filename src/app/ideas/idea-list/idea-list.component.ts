@@ -26,7 +26,17 @@ export class IdeaListComponent implements OnInit {
     }
     toggle(dummyIdea):void {
       dummyIdea.show = !dummyIdea.show
+    }
 
+    deleteIdea(idea):void{
+      console.log("id is")
+      console.log(idea)
+      this._ideaService.deleteIdea(idea).subscribe(
+        error =>{
+          console.log('error occurred');
+          console.log(error);
+        }
+      )
     }
 
 }
