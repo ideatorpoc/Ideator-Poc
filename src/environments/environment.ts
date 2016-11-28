@@ -6,9 +6,7 @@
 export const environment = {
   production: false,
   baseUrls: {
-
-   // ideas: 'api/ideas/idea.json'
-    //   ideas:'http://172.27.140.175:3000/api/ideas'
+    // ideas: 'api/ideas/idea.json'
     ideas:'https://ideatorpoc-backend.herokuapp.com/api/ideas/',
     ideadAdd:'https://ideatorpoc-backend.herokuapp.com/api/ideas/create'
 

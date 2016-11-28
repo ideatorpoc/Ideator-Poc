@@ -28,7 +28,7 @@ export class IdeaAddComponent implements OnInit {
       idea=>this.ideaAddResponse=idea,
       error =>{
         console.log('error occurred');
-      console.log(error);
+        console.log(error);
       }
       ); 
     //ToDO:Or does it even return anything

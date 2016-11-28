@@ -23,8 +23,8 @@ export class IdeaService {
 
   addNewIdea(newIdea: Idea) {
     this.CreateIdea= new createIdea() 
-    newIdea.photo = 'assets/img/Carter-Wigell.png';
-    newIdea.banner = 'assets/img/img01.png';
+    newIdea.photo = 'assets/img/user_icon.png';
+    newIdea.banner = 'assets/img/dummy.png';
     newIdea.title = 'Frozen Pizza';
     newIdea.likescount = 10;
     newIdea.commentscount = 15;
