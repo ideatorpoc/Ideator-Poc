@@ -30,13 +30,13 @@ export class IdeaAddComponent implements OnInit {
   save() {
     let idea = this.newIdea;
     this._ideaService.addNewIdea(this.newIdea).subscribe(
-      idea=>this.ideaAddResponse=idea,
+      idea=>(this.ideaAddResponse=idea,this.newIdea= <Idea>{},this.showSnackbar()),
+
       error =>{
         console.log('error occurred');
         console.log(error);
       }
       ); 
-      this.showSnackbar();
     //ToDO:Or does it even return anything
     //  this._ideaService.addNewIdea(this.newIdea).subscribe();
   }
