@@ -29,9 +29,7 @@ export class IdeaListComponent implements OnInit {
     }
 
     deleteIdea(idea):void{
-      console.log("id is")
-      console.log(idea)
-      this._ideaService.deleteIdea(idea).subscribe(
+      this._ideaService.deleteIdea(idea).subscribe(result =>{this.getIdeas()},
         error =>{
           console.log('error occurred');
           console.log(error);
