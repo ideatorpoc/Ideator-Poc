@@ -1,0 +1,26 @@
+
+.form-container{ width: 750px; margin: 0 auto;}
+.form-container md-input, .form-container md-textarea{
+    width: 100%;
+}
+.form-container .row{
+    margin-bottom: 15px;
+}
+.form-container .button-wrapper{
+    margin-top: 30px;
+}
+
+.form-container .form-header{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.form-container .form-header h1{
+    margin-bottom: 0;
+}
+.form-container .form-header p{
+    margin-top: 10px;
+}
+.login md-input .md-input-prefix{
+    width: 50px;
+}

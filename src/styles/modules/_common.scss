@@ -1,0 +1,88 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+
+body {
+    padding:0;
+    margin: 0;
+    background: $base-background-color;
+    font-family: $base-font;
+}
+
+.main-container {
+    max-width: 1264px;
+    margin: 0 auto;
+    margin-bottom: 170px;
+}
+
+/*@mixin box-shadow($shadow) {
+    -webkit-box-shadow: $shadow;
+    -moz-box-shadow: $shadow;
+    -ms-box-shadow: $shadow;
+    box-shadow: $shadow;
+}
+
+
+%sectionHeading{	
+	font-size: $fontsize-23x;
+	color: #666;
+	padding-bottom: $val10;
+	font-family: roboto;
+	font-weight: normal;
+}
+.heading {
+    @extend %sectionHeading;	
+
+}
+@mixin form-control-shadow {
+    box-shadow: 0 1px 4px rgba(10, 11, 11, 0.2) inset;
+    -webkit-box-shadow: 0 1px 4px rgba(10, 11, 11, 0.2) inset;
+    -moz-box-shadow: 0 1px 4px rgba(10, 11, 11, 0.2) inset;
+}
+@mixin form-control-no-shadow {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin select-appearance {
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+.form-select {
+    @include border-radius(5px);
+    @include select-appearance;
+    @include form-control-shadow;
+}
+%blue-btn {
+    background-color: #3982ea;
+    color: #fff;
+    border: 1px solid #1f82e5;
+    cursor: pointer;
+    text-align: center;
+    font-family: Roboto;
+}
+@mixin blue-btn ($fontsize,
+$lineheight,
+$paddingbtn,
+$fontweight) {
+    @extend %blue-btn;
+    font-size: $fontsize;
+    line-height: $lineheight;
+    padding: $paddingbtn;
+    font-weight: $fontweight;
+}
+
+
+
+
+
+
+*/
