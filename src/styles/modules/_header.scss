@@ -1,0 +1,76 @@
+
+header {
+    margin-bottom: 25px;
+    .logo {
+        width: auto;
+    }
+    md-toolbar.md-primary {
+        background: $ideator-blue-background-color;
+        ul {
+            list-style: none;
+            padding-left: 0;
+            li {
+                display: inline-block;
+                padding: 0 15px;
+                font-size: 16px;
+                a {
+                    color: $whitetxt;
+                    &:hover{
+                        color: $ideator-green-text-color;
+                    }
+                }
+            }
+        }
+        .heading{
+            border-left: 1px solid rgba(255,255,255,0.2);
+            padding-left: 24px;
+            margin-left: 24px;
+            line-height: 32px;
+            margin-right: 50px;
+        }
+        .user-icon{
+            margin-left: 20px;
+            margin-top: 6px;
+        }
+    }
+}
+
+/**********************search*********************/
+
+.search-wrapper{
+    width: 450PX;
+    font-size: 16px;
+    line-height: 30px;
+    .md-input-wrapper{
+        margin: 16px 0;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 8px;
+        border-radius: 3px;
+    }
+    .md-input-underline{
+        display:   none;
+    }
+    .md-input-placeholder{
+        color: $whitetxt;
+    }
+    .md-input-placeholder{
+        &.md-float:not(.md-empty){
+            transform:translateY(0) scale(0);
+            padding-bottom: 0;
+            color:$whitetxt;         
+        }
+        &.md-input-placeholder.md-float.md-focused{
+            transform:translateY(0) scale(0);
+            padding-bottom: 0;
+            color: $whitetxt;         
+        }
+    }
+    md-icon{
+        top: 4px;
+        position: relative;
+    }
+    .md-input-prefix{
+        width: 35px;
+    }
+}
+

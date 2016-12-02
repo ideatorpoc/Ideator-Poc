@@ -1,0 +1,48 @@
+.share-icon-wrapper {
+    position: absolute;
+    top: 255px;
+    right: 12px;
+    z-index: 2;
+    .share-icon {
+        display: inline-block;
+        text-align: center;
+        background-color: $white-background-color;
+        transition: all .2s ease-in-out;
+        outline: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.24);
+        color: #00abe3;
+        md-icon {
+            width: 24px;
+        }
+    }
+    .facebook {
+        background-color: $facebook-background-color;
+        color: $whitetxt;
+    }
+    .twitter {
+        background-color: $twitter-background-color;
+        color: $whitetxt;
+    }
+    .googleplus {
+        background-color: $google-pluse-background-color;
+        color: $whitetxt;
+    }
+    .share-icon,
+    .facebook,
+    .twitter,
+    .googleplus {
+        transition: all .2s ease-in-out;
+        &:hover{
+            transform: scale(1.3);
+        }
+    }
+    md-icon {
+        width: 18px;
+    }
+    span {
+        transition: margin 300ms cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    }
+    ~ span {
+        margin-right: 250px;
+    }
+}

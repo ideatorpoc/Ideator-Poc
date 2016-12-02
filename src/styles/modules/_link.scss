@@ -1,0 +1,7 @@
+a {
+    color: $ideator-blue-text-color;
+    text-decoration: none;
+    &:hover {
+        color: $ideator-green-text-color;
+    }
+}

@@ -4,27 +4,24 @@
     <md-card class="create-idea-form animated fadeIn">
      <div class="form-header"> <h1>It starts with an idea.</h1>
       <p>Now give me the pitch.</p></div>
-      <form>
+      <form (ngSubmit)="save()" #heroForm="ngForm">
         <div class="row">
-          <md-input placeholder="Give your idea name. (You can change it later)" [(ngModel)]="newIdea.title" name="ideaname"> <span md-prefix>*</span></md-input>
+          <md-input placeholder="Give your idea name. (You can change it later)" [(ngModel)]="newIdea.title" name="ideaname" required> </md-input>
         </div>
         <div class="row">
            <md-input placeholder="Tagline"></md-input>
         </div>
         <div class="row">
           <md-input placeholder="YouTube video link or Vimeo Video link"> </md-input>          
-
         </div>
 
         <div class="row">
-          <md-textarea class="" placeholder="The Elevator Pitch" [(ngModel)]="newIdea.description" name="ideadesc"></md-textarea>
-
+          <md-textarea class="" placeholder="The Elevator Pitch" [(ngModel)]="newIdea.description" name="ideadesc" maxlength="500" #descriptionCount><md-hint align="end">{{descriptionCount.characterCount}} / 500</md-hint></md-textarea>
+          
         </div>
         <div class="row button-wrapper">
-          <div><button md-raised-button color="primary" (click)="save()">CREATE NEW IDEA</button>
+          <div><button md-raised-button color="primary" type="submit" [disabled]="!heroForm.form.valid">CREATE NEW IDEA</button>
           <button md-button class="cancel-button" [routerLink]="['/ideas']">CANCEL</button></div>
-         
-         
         </div>
       </form>
     </md-card>

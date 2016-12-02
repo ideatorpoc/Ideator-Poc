@@ -19,7 +19,8 @@
       "mobile": false,
       "styles": [
         "styles/styles.css",
-        "styles/animate.css"
+        "styles/animate.css",
+        "styles/main.scss"
       ],
       "scripts": [],
       "environments": {
@@ -42,7 +43,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "prefixInterfaces": false,
     "inline": {
       "style": false,

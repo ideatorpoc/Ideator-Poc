@@ -1,0 +1,19 @@
+[md-raised-button].md-primary{
+    background: #03758e;
+}
+
+.create-idea{
+ position: fixed;
+ right: 5px; 
+ bottom: 5px;
+    height: 130px;
+    width: 130px;
+    border-radius: 50% 50% 5px 50%;
+    background: #c2c2c2;
+}
+.create-idea button{
+        position: absolute;
+    bottom: 35px;
+    right: 35px;
+    /*background: #03758e !important;*/
+}

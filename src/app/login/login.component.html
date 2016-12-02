@@ -6,24 +6,21 @@
     <md-card class="login">
        <!--<div class="form-header"> <h1>Login</h1>
        </div>-->
-      <form>
+      <form (ngSubmit)="login()" #loginForm="ngForm">
         <div class="row">
-          <md-input type="email" placeholder="E-mail Address">
-<span md-prefix><md-icon class="material-icons gray">email</md-icon></span>
-
-
+          <md-input type="email" placeholder="E-mail Address" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+            <span md-prefix><md-icon class="material-icons gray">email</md-icon></span>
           </md-input>
         </div>
 
         <div class="row">
-          <md-input type="Password" placeholder="Password" >
+          <md-input type="Password" placeholder="Password" name="password" [(ngModel)]="model.password" #password="ngModel" required>
             <span md-prefix><md-icon class="material-icons gray">lock</md-icon></span>
           </md-input>
-
         </div>
 
         <div class="row button-wrapper">
-          <button md-raised-button color="primary">Login</button>
+          <button md-raised-button color="primary" type="submit" [disabled]="!loginForm.form.valid">Login</button>
         </div>
       </form>
     </md-card>

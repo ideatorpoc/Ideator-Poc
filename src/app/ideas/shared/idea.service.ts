@@ -1,15 +1,12 @@
 
 import { Injectable } from '@angular/core';
-
 import { Http, Response,Headers, RequestOptions } from '@angular/http';
-
 import { Observable } from 'rxjs/Observable';
+import { Router } from '@angular/router';
 
 import { environment } from './../../../environments/environment';
-
-
 import { Idea, createIdea } from './idea.model';
-
+import { AuthenticationService } from './../../shared/authentication.service';
 
 @Injectable()
 export class IdeaService {
@@ -18,7 +15,8 @@ export class IdeaService {
   private _ideaAddUrl=environment.baseUrls.ideadAdd;
   ideas: Idea[];
   private CreateIdea:createIdea;
-  constructor(private _http: Http) {       
+  constructor(private _http: Http,private authenticationService: AuthenticationService, 
+              private router: Router) {       
   }
 
   addNewIdea(newIdea: Idea) {
@@ -33,7 +31,7 @@ export class IdeaService {
     let body = JSON.stringify(this.CreateIdea);
     console.log(this._ideaAddUrl);
     console.log(body);
-    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + this.authenticationService.token });
     let options = new RequestOptions({ headers: headers });
 
       return <Observable<Idea>>this._http
@@ -44,26 +42,30 @@ export class IdeaService {
     }
 
   getIdeas(): Observable<Idea[]> {
-      return this._http.get(this._ideaUrl)
+      let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token });
+      let options = new RequestOptions({ headers: headers });
+      return this._http.get(this._ideaUrl,options)
       .map((response: Response) => <Idea[]>response.json())
-     // .do(data => console.log('All: ' + JSON.stringify(data)))
+      //.do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
 
-  deleteIdea(idea: Idea): Observable<Idea[]> {
-    let headers = new Headers({ 'Accept': 'application/json'});
+  deleteIdea(idea: Idea) {
+    let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token });
     let options = new RequestOptions({ headers: headers });
     const url = `${this._ideaUrl}${idea.id}`;
-      return this._http.delete(url,options)
-      .map((res:Response) => res.json())
-      .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+      return <Observable<Idea>>this._http
+      .delete(url, options)
+      .map(res => <Idea>res.json())
+      .do(data=>console.log('Deleted Idea response:' + JSON.stringify(data)))
+      .catch(this.handleError);
   }  
   private handleError(error: Response) {
     console.error(error);
     let msg = `Status code ${error.status} on url ${error.url} and ${error.statusText}`;
-     
+    if (error.status == 401){
+      alert("You need to sign in again");
+    }  
     return Observable.throw(msg);
   } 
-
-
 }
