@@ -9,6 +9,7 @@ export class AuthGuard implements CanActivate {
     
     showSnackbar(message) {   
         let simpleSnackBarRef =  this._snackBar.open(message, 'Dismiss');
+        setTimeout(simpleSnackBarRef.dismiss.bind(simpleSnackBarRef), 5000);
     }
 
     canActivate() {
