@@ -9,7 +9,8 @@ import { environment } from './../../environments/environment';
 export class AuthenticationService {
     public token: string;
     private _loginUrl = environment.baseUrls.login;
-
+    private _logoutUrl = environment.baseUrls.logout;
+    
 
     constructor(private http: Http,
                 private router: Router) {
@@ -42,9 +43,21 @@ export class AuthenticationService {
     }
 
     logout() {
+        let headers = new Headers({ 'Content-Type': 'application/json','Authorization': 'Bearer ' + this.token });
+        let options = new RequestOptions({ headers: headers });
+        return this.http.get(this._logoutUrl,options)
+            .map((response: Response) => {
+                // logout successful 
+                this.token = null;
+                localStorage.removeItem('currentUser');
+                this.router.navigate(['/login']);
+            });
+    }
+    removeToken() {
         // clear token remove user from local storage to log user out
         this.token = null;
         localStorage.removeItem('currentUser');
         this.router.navigate(['/login']);
     }
+
 }    

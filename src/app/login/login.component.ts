@@ -18,15 +18,15 @@ export class LoginComponent implements OnInit {
 
     showSnackbar(message) {   
         let simpleSnackBarRef =  this._snackBar.open(message, 'Dismiss');
+        setTimeout(simpleSnackBarRef.dismiss.bind(simpleSnackBarRef), 5000);
     }
 
   ngOnInit() {
     // reset login status
-    this.authenticationService.logout();
+    this.authenticationService.removeToken();
   }
 
   login() {
-      //this.loading = true;
       this.authenticationService.login(this.model.username, this.model.password)
           .subscribe(result => {
               if (result === true) {
