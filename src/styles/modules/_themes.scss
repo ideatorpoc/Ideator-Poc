@@ -1,0 +1,42 @@
+@import '~@angular/material/core/theming/all-theme';
+@include md-core();
+
+.dark-theme {
+   $dark-p: md-palette($md-pink, 700);
+   $dark-a: md-palette($md-blue-grey);
+
+   $dark-t: md-dark-theme($dark-p, $dark-a);
+
+   @include angular-material-theme($dark-t); 
+}
+
+.deeppurple-amber{
+   @import '~@angular/material/core/theming/prebuilt/deeppurple-amber.css';
+}
+
+.indigo-pink{
+  //   @import '~@angular/material/core/theming/prebuilt/indigo-pink.css';
+  // Define a theme.
+            $primary: md-palette($md-indigo);
+            $accent:  md-palette($md-pink, A200, A100, A400);
+
+            $theme: md-light-theme($primary, $accent);
+
+            // Include all theme styles for the components.
+            @include angular-material-theme($theme);
+        }
+
+.purple-green{
+   // @import '~@angular/material/core/theming/prebuilt/purple-green.css';
+   // Define a theme.
+    $primary: md-palette($md-purple, 700, 500, 800);
+    $accent:  md-palette($md-green, A200, A100, A400);
+
+    $theme: md-light-theme($primary, $accent);
+
+    // Include all theme styles for the components.
+    @include angular-material-theme($theme);
+
+}
+
+
