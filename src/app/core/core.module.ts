@@ -6,7 +6,8 @@ import { RouterModule } from '@angular/router';
 import {MaterialModule} from '@angular/material';
 
 
-import { NavComponent } from './nav/nav.component';
+import { NavComponent,SettingsDialog } from './nav/nav.component';
+import { ThemesComponent } from './themes/themes.component';
 
 @NgModule({
   imports: [
@@ -21,6 +22,7 @@ import { NavComponent } from './nav/nav.component';
     RouterModule,
     [NavComponent]
   ],
-  declarations: [NavComponent]
+  declarations: [NavComponent, ThemesComponent,SettingsDialog],
+  entryComponents:[SettingsDialog]
 })
 export class CoreModule { }
