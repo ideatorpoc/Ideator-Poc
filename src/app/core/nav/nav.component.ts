@@ -1,5 +1,8 @@
+
 import { Component, OnInit,ViewContainerRef,EventEmitter,Output } from '@angular/core';
 import {MdDialog,MdDialogConfig,MdDialogRef} from '@angular/material';
+import { AuthenticationService } from './../../shared/authentication.service';
+import { Router } from '@angular/router';
 
 import { ThemesComponent } from './../themes/themes.component';
 
@@ -51,8 +54,8 @@ export class NavComponent implements OnInit{
     @Output()
     onThemeChanged= new EventEmitter<string>();
 
-    constructor(public dialog:MdDialog,public vcr:ViewContainerRef){
-
+    constructor(private router: Router,
+        private authenticationService: AuthenticationService,public dialog:MdDialog,public vcr:ViewContainerRef){
     }
     ngOnInit(){
         this.menuItems = [
@@ -79,4 +82,13 @@ export class NavComponent implements OnInit{
     });
        
     }
+
+  logout() {
+      //this.loading = true;
+      this.authenticationService.logout()
+          .subscribe(result => {
+             this.router.navigate(['/login']);
+          });
+  }
+
 } 

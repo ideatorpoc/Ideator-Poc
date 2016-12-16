@@ -13,6 +13,9 @@ export class IdeaService {
 
   private _ideaUrl = environment.baseUrls.ideas;
   private _ideaAddUrl=environment.baseUrls.ideadAdd;
+  private headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + this.authenticationService.token });
+  private options = new RequestOptions({ headers: this.headers });
+
   ideas: Idea[];
   private CreateIdea:createIdea;
   constructor(private _http: Http,private authenticationService: AuthenticationService, 
@@ -31,31 +34,24 @@ export class IdeaService {
     let body = JSON.stringify(this.CreateIdea);
     console.log(this._ideaAddUrl);
     console.log(body);
-    let headers = new Headers({ 'Content-Type': 'application/json', 'Authorization': 'Bearer ' + this.authenticationService.token });
-    let options = new RequestOptions({ headers: headers });
-
       return <Observable<Idea>>this._http
-       .post(this._ideaAddUrl, body,options)
+       .post(this._ideaAddUrl, body,this.options)
        .map(res => <Idea>res.json())
        .do(data=>console.log('Added Idea response:' + JSON.stringify(data)))
        .catch(this.handleError);
     }
 
   getIdeas(): Observable<Idea[]> {
-      let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token });
-      let options = new RequestOptions({ headers: headers });
-      return this._http.get(this._ideaUrl,options)
+      return this._http.get(this._ideaUrl,this.options)
       .map((response: Response) => <Idea[]>response.json())
       //.do(data => console.log('All: ' + JSON.stringify(data)))
       .catch(this.handleError);
   }
 
   deleteIdea(idea: Idea) {
-    let headers = new Headers({'Authorization': 'Bearer ' + this.authenticationService.token });
-    let options = new RequestOptions({ headers: headers });
     const url = `${this._ideaUrl}${idea.id}`;
       return <Observable<Idea>>this._http
-      .delete(url, options)
+      .delete(url, this.options)
       .map(res => <Idea>res.json())
       .do(data=>console.log('Deleted Idea response:' + JSON.stringify(data)))
       .catch(this.handleError);
