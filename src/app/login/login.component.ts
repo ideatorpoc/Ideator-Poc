@@ -1,7 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../shared/authentication.service';
 import { Router } from '@angular/router';
 import {MdSnackBar,MdSnackBarConfig} from '@angular/material';
+
+import { ExceptionService } from './../core/exception.service';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +17,8 @@ export class LoginComponent implements OnInit {
   error = '';
   
   constructor(private router: Router,private _snackBar: MdSnackBar,
-        private authenticationService: AuthenticationService) { }
+        private authenticationService: AuthenticationService,
+        private _exceptionService:ExceptionService) { }
 
     showSnackbar(message) {   
         let simpleSnackBarRef =  this._snackBar.open(message, 'Dismiss');
@@ -36,7 +40,8 @@ export class LoginComponent implements OnInit {
               }
           },        
           error =>{
-          this.showSnackbar(JSON.parse(error._body).error)
+         // this.showSnackbar(JSON.parse(error._body).error)
+         this._exceptionService.handleServiceError('Login',error);
         });
   }
 }
