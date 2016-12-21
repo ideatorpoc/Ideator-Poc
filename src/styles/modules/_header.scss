@@ -5,7 +5,7 @@ header {
         width: auto;
     }
     md-toolbar.md-primary {
-     //   background: $ideator-blue-background-color;
+     //theme   background: $ideator-blue-background-color;
         ul {
             list-style: none;
             padding-left: 0;
@@ -16,7 +16,7 @@ header {
                 a {
                     color: $whitetxt;
                     &:hover{
-                        color: $ideator-green-text-color;
+                    //theme    color: $ideator-green-text-color;
                     }
                 }
             }

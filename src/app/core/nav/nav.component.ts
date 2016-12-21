@@ -32,7 +32,8 @@ export class SettingsDialog {
     'deeppurple-amber',
     'indigo-pink',
     'dark-theme'  ,
-    'purple-green'  
+    'purple-green' ,
+    'ideator' 
     ];
     favoriteTheme: string = 'deeppurple-amber';
 

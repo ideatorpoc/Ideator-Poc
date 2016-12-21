@@ -8,9 +8,10 @@
        </div>-->
       <form (ngSubmit)="login()" #loginForm="ngForm">
         <div class="row">
-          <md-input type="email" placeholder="E-mail Address" name="username" [(ngModel)]="model.username" #username="ngModel" required>
+          <md-input type="email" placeholder="E-mail Address" name="username" [(ngModel)]="model.username" #username="ngModel" required >
             <span md-prefix><md-icon class="material-icons gray">email</md-icon></span>
           </md-input>
+          
         </div>
 
         <div class="row">

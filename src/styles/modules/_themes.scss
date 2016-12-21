@@ -39,4 +39,17 @@
 
 }
 
+.ideator{
+   // @import '~@angular/material/core/theming/prebuilt/purple-green.css';
+   // Define a theme.
+    $primary: md-palette($md-teal-ideator, 700, 500, 800);
+    $accent:  md-palette($md-green-ideator, A200, A100, A400);
+
+    $theme: md-light-theme($primary, $accent);
+
+    // Include all theme styles for the components.
+    @include angular-material-theme($theme);
+
+}
+
 
