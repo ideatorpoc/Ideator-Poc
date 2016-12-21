@@ -1,4 +1,5 @@
 
+
 import { Injectable } from '@angular/core';
 import { Http, Response,Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
@@ -7,6 +8,7 @@ import { Router } from '@angular/router';
 import { environment } from './../../../environments/environment';
 import { Idea, createIdea } from './idea.model';
 import { AuthenticationService } from './../../shared/authentication.service';
+import { ExceptionService } from './../../core/exception.service';
 
 @Injectable()
 export class IdeaService {
@@ -19,7 +21,9 @@ export class IdeaService {
   ideas: Idea[];
   private CreateIdea:createIdea;
   constructor(private _http: Http,private authenticationService: AuthenticationService, 
-              private router: Router) {       
+              private router: Router
+              //,private _exceptionService:ExceptionService
+              ) {       
   }
 
   addNewIdea(newIdea: Idea) {
@@ -39,6 +43,7 @@ export class IdeaService {
        .map(res => <Idea>res.json())
        .do(data=>console.log('Added Idea response:' + JSON.stringify(data)))
        .catch(this.handleError);
+       //.catch(this._exceptionService.catchBadResponse);
     }
 
   getIdeas(): Observable<Idea[]> {

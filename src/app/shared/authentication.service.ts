@@ -1,9 +1,11 @@
+
 import { Injectable } from '@angular/core';
 import { Http, Headers, Response, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map'
 import { Router } from '@angular/router';
 import { environment } from './../../environments/environment';
+import { ExceptionService } from './../core/exception.service';
 
 @Injectable()
 export class AuthenticationService {
@@ -13,7 +15,8 @@ export class AuthenticationService {
     
 
     constructor(private http: Http,
-                private router: Router) {
+                private router: Router,
+                private _exceptionService:ExceptionService) {
         // set token if saved in local storage
         var currentUser = JSON.parse(localStorage.getItem('currentUser'));
         this.token = currentUser && currentUser.token;
@@ -39,7 +42,8 @@ export class AuthenticationService {
                     // return false to indicate failed login
                     return false;
                 }
-            });
+            })
+            .catch(this._exceptionService.catchBadResponse);
     }
 
     logout() {
