@@ -10,7 +10,7 @@ export const environment = {
     // ideadAdd:'http://172.27.140.186:3000/api/ideas/create',
     // login:'http://172.27.140.186:3000/api/sign_in',
     // logout:'http://172.27.140.186:3000/api/sign_out'
-    // ideas: 'api/ideas/idea.json'
+    ideasFake: 'api/ideas/idea.json',
     ideas:'https://ideatorpoc-backend.herokuapp.com/api/ideas/',
     ideadAdd:'https://ideatorpoc-backend.herokuapp.com/api/ideas/',
     login:'https://ideatorpoc-backend.herokuapp.com/api/sign_in',
