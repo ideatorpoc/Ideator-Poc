@@ -1,17 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router, CanActivate } from '@angular/router';
-import {MdSnackBar,MdSnackBarConfig} from '@angular/material';
+import { ExceptionService } from './../core/exception.service';
+
 
 @Injectable()
 export class AuthGuard implements CanActivate {
 
-    constructor(private router: Router,private _snackBar: MdSnackBar) { }
+    constructor(private router: Router, private _exceptionService:ExceptionService) { }
     
-    showSnackbar(message) {   
-        let simpleSnackBarRef =  this._snackBar.open(message, 'Dismiss');
-        setTimeout(simpleSnackBarRef.dismiss.bind(simpleSnackBarRef), 5000);
-    }
-
     canActivate() {
         if (localStorage.getItem('currentUser')) {
             // logged in so return true
@@ -20,7 +16,7 @@ export class AuthGuard implements CanActivate {
 
         // not logged in so redirect to login page
         this.router.navigate(['/login']);
-        this.showSnackbar('Please login')
+        this._exceptionService.handleServiceError('Login','Please login');
         return false;
     }
 }

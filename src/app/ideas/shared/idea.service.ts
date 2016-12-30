@@ -25,7 +25,7 @@ export class IdeaService implements IIdeaService {
   private CreateIdea:createIdea;
   constructor(private _http: Http,private authenticationService: AuthenticationService, 
               private router: Router
-              //,private _exceptionService:ExceptionService
+              ,private _exceptionService:ExceptionService
               ) {       
   }
 
@@ -39,21 +39,18 @@ export class IdeaService implements IIdeaService {
     this.CreateIdea.idea = new Idea();
     this.CreateIdea.idea= newIdea;
     let body = JSON.stringify(this.CreateIdea);
-    console.log(this._ideaAddUrl);
-    console.log(body);
       return <Observable<Idea>>this._http
        .post(this._ideaAddUrl, body,this.options)
        .map(res => <Idea>res.json())
        .do(data=>console.log('Added Idea response:' + JSON.stringify(data)))
-       .catch(this.handleError);
-       //.catch(this._exceptionService.catchBadResponse);
+       .catch(this._exceptionService.catchBadResponse);
     }
 
  public getIdeas(): Observable<Idea[]> {
       return this._http.get(this._ideaUrl,this.options)
       .map((response: Response) => <Idea[]>response.json())
-      //.do(data => console.log('All: ' + JSON.stringify(data)))
-      .catch(this.handleError);
+      .do(data => console.log('All: ' + JSON.stringify(data)))
+      .catch(this._exceptionService.catchBadResponse);
   }
 
   deleteIdea(idea: Idea) {
@@ -62,14 +59,6 @@ export class IdeaService implements IIdeaService {
       .delete(url, this.options)
       .map(res => <Idea>res.json())
       .do(data=>console.log('Deleted Idea response:' + JSON.stringify(data)))
-      .catch(this.handleError);
+      .catch(this._exceptionService.catchBadResponse);
   }  
-  private handleError(error: Response) {
-    console.error(error);
-    let msg = `Status code ${error.status} on url ${error.url} and ${error.statusText}`;
-    if (error.status == 401){
-      alert("You need to sign in again");
-    }  
-    return Observable.throw(msg);
-  } 
 }

@@ -20,11 +20,6 @@ export class LoginComponent implements OnInit {
         private authenticationService: AuthenticationService,
         private _exceptionService:ExceptionService) { }
 
-    showSnackbar(message) {   
-        let simpleSnackBarRef =  this._snackBar.open(message, 'Dismiss');
-        setTimeout(simpleSnackBarRef.dismiss.bind(simpleSnackBarRef), 5000);
-    }
-
   ngOnInit() {
     // reset login status
     this.authenticationService.removeToken();
@@ -40,7 +35,6 @@ export class LoginComponent implements OnInit {
               }
           },        
           error =>{
-         // this.showSnackbar(JSON.parse(error._body).error)
          this._exceptionService.handleServiceError('Login',error);
         });
   }
