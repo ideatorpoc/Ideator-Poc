@@ -1,3 +1,5 @@
+import { CommonModule } from '@angular/common';
+
 
 import { AppRoutingModule } from './../app-routing.module';
 import { NgModule } from '@angular/core';
@@ -8,11 +10,14 @@ import { AuthenticationService } from './../shared/authentication.service';
 
 import { LoginRoutingModule,routedComponents } from './login-routing.module';
 
+import { LocalizationService } from './../core/localization.service';
+
 @NgModule({
   imports: [
     LoginRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    CommonModule
   ],
   declarations: [routedComponents],
   providers:[]

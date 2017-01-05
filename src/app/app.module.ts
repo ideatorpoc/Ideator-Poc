@@ -1,4 +1,5 @@
 
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
@@ -15,6 +16,7 @@ import { CoreModule } from './core/core.module';
 import { AuthenticationService } from './shared/authentication.service';
 
 import { AuthGuard } from './guards/auth.guard';
+import { LocalizationService } from './core/localization.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { AuthGuard } from './guards/auth.guard';
     AppRoutingModule,
     CoreModule
   ],
-  providers: [AuthGuard,AuthenticationService,MdSnackBar],
+  providers: [AuthGuard,AuthenticationService,MdSnackBar,LocalizationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

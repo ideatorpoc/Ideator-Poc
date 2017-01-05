@@ -5,6 +5,8 @@
 
 export const environment = {
   production: false,
+ // localization:"default",
+  localization:"german",
   baseUrls: {
     // ideas:'http://172.27.140.186:3000/api/ideas/',
     // ideadAdd:'http://172.27.140.186:3000/api/ideas/create',
