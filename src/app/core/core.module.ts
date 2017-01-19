@@ -1,4 +1,5 @@
 
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -6,7 +7,9 @@ import { RouterModule } from '@angular/router';
 import {MaterialModule} from '@angular/material';
 
 
-import { NavComponent } from './nav/nav.component';
+import { NavComponent,SettingsDialog } from './nav/nav.component';
+import { ThemesComponent } from './themes/themes.component';
+import { ExceptionService } from './exception.service';
 
 @NgModule({
   imports: [
@@ -21,6 +24,8 @@ import { NavComponent } from './nav/nav.component';
     RouterModule,
     [NavComponent]
   ],
-  declarations: [NavComponent]
+  declarations: [NavComponent, ThemesComponent,SettingsDialog],
+  providers:[ExceptionService],
+  entryComponents:[SettingsDialog]
 })
 export class CoreModule { }

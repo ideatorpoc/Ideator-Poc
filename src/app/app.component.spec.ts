@@ -1,33 +1,41 @@
 /* tslint:disable:no-unused-variable */
 
-import { TestBed, async } from '@angular/core/testing';
+import { TestBed, async,ComponentFixture } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('App: IdeatorPoc', () => {
-  beforeEach(() => {
+  let component:    AppComponent;
+  let fixture: ComponentFixture<AppComponent>;
+
+  beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent
       ],
-    });
-  });
+      schemas:[NO_ERRORS_SCHEMA]
+    }).compileComponents();
+  }));
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(AppComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+   });
 
   it('should create the app', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+     expect(component).toBeTruthy();
   }));
 
-  it(`should have as title 'app works!'`, async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
-    let app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('app works!');
+  it('should should have default theme', async(()=>{
+      expect(component.theme).toEqual('deeppurple-amber');
   }));
 
-  it('should render title in a h1 tag', async(() => {
-    let fixture = TestBed.createComponent(AppComponent);
+  it('it should have a different theme',async(()=>{
+     component.theme='indigo-pink';
     fixture.detectChanges();
-    let compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('app works!');
+    expect(component.theme).toEqual('indigo-pink');
   }));
 });
+
+

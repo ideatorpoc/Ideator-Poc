@@ -1,8 +1,11 @@
-<div>
-  <header><idea-nav></idea-nav></header>
-   <main class="main-container">
-     <section>
-       <router-outlet></router-outlet>
-     </section>
-   </main>
+<div [class]="theme">
+  <header>
+    <idea-nav (onThemeChanged)="onThemeChanged($event)">
+    </idea-nav>
+  </header>
+  <main class="main-container">
+    <section>
+      <router-outlet></router-outlet>
+    </section>
+  </main>
 </div>

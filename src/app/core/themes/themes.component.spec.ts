@@ -1,23 +1,23 @@
 /* tslint:disable:no-unused-variable */
-/*import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { IdeasComponent } from './ideas.component';
+import { ThemesComponent } from './themes.component';
 
-describe('IdeasComponent', () => {
-  let component: IdeasComponent;
-  let fixture: ComponentFixture<IdeasComponent>;
+describe('ThemesComponent', () => {
+  let component: ThemesComponent;
+  let fixture: ComponentFixture<ThemesComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IdeasComponent ]
+      declarations: [ ThemesComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(IdeasComponent);
+    fixture = TestBed.createComponent(ThemesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
@@ -25,4 +25,4 @@ describe('IdeasComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-});*/
+});
