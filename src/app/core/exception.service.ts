@@ -14,8 +14,8 @@ export class ExceptionService {
         console.log(errorResponse);
         if(errorResponse.status == 401){
           //used for loggout user
-          console.log("comes in")
           localStorage.removeItem('currentUser');
+          window.location.href = "/login";
           //return Observable.of(false);
         }
         else{
